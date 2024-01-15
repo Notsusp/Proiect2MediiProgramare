@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using JustABlog.Models;
 
 namespace JustABlog.Data;
 
@@ -19,4 +20,6 @@ public class JAuthDbContext : IdentityDbContext<BlogUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
     }
+
+public DbSet<JustABlog.Models.BlogPost> BlogPost { get; set; } = default!;
 }
